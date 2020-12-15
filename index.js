@@ -17,19 +17,21 @@ return arr;
   }
   
 function createTimeInEvent(record,time){
+  let a=time.split(" ")
   let object={};
     object.type="TimeIn";
-    object.hour=parseInt(time.substring(11));
-    object.date=time.substring(0,10);
+    object.hour=parseInt(a[1]);
+    object.date=a[0];
   record.timeInEvents.push(object);
   return record;
 }
 
 function createTimeOutEvent(record,time){
+  let a=time.split(" ")
     let object={};
     object.type="TimeOut";
-    object.hour=parseInt(time.substring(11));
-    object.date=time.substring(0,10);
+    object.hour=parseInt(a[1]);
+    object.date=a[0];
   record.timeOutEvents.push(object);
   return record;
 }
